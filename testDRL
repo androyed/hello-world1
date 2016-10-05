@@ -31,10 +31,10 @@ Memory model        : Tiny
 External SRAM size  : 0
 Data Stack size     : 16
 *****************************************************/
-
+'''
 #include <tiny13.h>
 #include <delay.h>
-    
+'''    
 #define starttime 30 // Время розжига
           
 unsigned char GetData (void)
