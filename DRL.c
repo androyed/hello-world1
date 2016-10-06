@@ -19,10 +19,7 @@ Comments:
 Подключение:
 5 PB0 Выход ШИМ или 0
 6 PB1 Выход 1 когда есть ШИМ, 0 когда нет.
-7 PB2 Вход 1 блокировка ШИМ
-2 PB3 Вход 0 блокировка ШИМ
-3 PB4 Вход кнопка на общий
-1 PB5 не используется
+m
 
 
 Chip type           : ATtiny13
@@ -75,9 +72,17 @@ CLKPR=0x00;
 // Input/Output Ports initialization
 // Port B initialization
 // Func5=In Func4=In Func3=In Func2=In Func1=Out Func0=Out 
+DDRB=0x03; //5-0 4-0 3-0 2-0 1-1 0-1 регистр данных порта В
 // State5=P State4=P State3=P State2=T State1=0 State0=0 
 PORTB=0x38;//5-1 4-1 3-1 2-0 1-0 0-0
-DDRB=0x03;
+
+//				DDRx.n		PORTx.n
+//(По умолчанию)		0		0
+//Высокоимпендансный вход
+//Вход с pull up резистором	0		1
+//Вызод соединен с землей	1		0
+//Выход соединен с VCC(+5 В)	1		1
+
 
 // Timer/Counter 0 initialization
 // Clock source: System Clock
@@ -123,7 +128,7 @@ if ((pwm_Need_Level < 0) && (pwm_Need_Level > 255) {
 oldgab = ((dt & 0x04) != 0); // начальные значения   PB2
 oldbrk = ((dt & 0x08) != 0); // начальные значения   PB3
 
-PORTB.1 = 0x00; //Включаем какой-т м
+PORTB.1 = 0x00; //Включаем 
 
 while (1)
    {
