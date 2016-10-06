@@ -74,10 +74,10 @@ CLKPR=0x00;
 
 // Input/Output Ports initialization
 // Port B initialization
-// Func5=In Func4=In Func3=In Func2=In Func1=Out Func0=Out 
-DDRB=0x03; //5-0 4-0 3-0 2-0 1-1 0-1 регистр данных порта В
-// State5=P State4=P State3=P State2=T State1=0 State0=0 
-PORTB=0x38;//5-1 4-1 3-1 2-0 1-0 0-0
+// 		Func5=In 	Func4=In 	Func3=In 	Func2=In 	Func1=Out 	Func0=Out 
+DDRB=0x03; //	5-0 		4-0 		3-0 		2-0 		1-1 		0-1 регистр данных порта В
+// 		State5=P 	State4=P 	State3=P 	State2=T 	State1=0 	State0=0 
+PORTB=0x38;//	5-1 		4-1 		3-1 		2-0 		1-0 		0-0
 
 //				DDRx.n		PORTx.n
 //(По умолчанию)		0		0
