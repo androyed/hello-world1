@@ -288,6 +288,27 @@ switch(bt_state) //Сам автомат
 }
 SetTimerTask(bt_scan,20);
    
-        // вход в режим настройки
-	//Начинаем отслеживать время нажатия если более 3 секунд, то входим в режим настройки
+}
+    
+//А это функция, которая через 2 секунды сработает и подберет все результаты подсчета
+void bt_ok(void)
+{
+	switch(bt_cnt_s)
+	{
+		case 1: bt1 = 1; break;
+		case 2: bt2 = 1; break;
+		case 3: bt3 = 1; break;
+		case 4: bt4 = 1; break;
+		case 5: bt5 = 1; break;
+		default: break;
+	}
+	switch(bt_cnt_l)
+	{
+		case 1: bt_l = 1; break;
+		case 2: bt_l2 = 1; break;
+		default: break;
+	}
+	bt_cnt = 0;
+	bt_cnt_s = 0;
+	bt_cnt_l = 0;
 }
