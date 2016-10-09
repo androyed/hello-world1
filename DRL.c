@@ -142,7 +142,7 @@ WDTCR=0x29;
 //Проверка на отсутствие или некорректность данных в памяти EEPROM, если слетает память EEPROM
 if ((pwm_Need_Level < 0) && (pwm_Need_Level > 255) {
 	//Записать в EEPROM 20% pwm_level
-	pwm_current = 51;
+	pwm_current = 51; 
 }
 oldgab = ((dt & 0x04) != 0); // начальные значения   PB2
 oldbrk = ((dt & 0x08) != 0); // начальные значения   PB3
